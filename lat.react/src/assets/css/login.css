@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+html{
+  background-image: url(../../assets/img/back.jpg);
+  background-size: cover;
+}
+body{
+  background: transparent;
+}
+
+.sign{
+  display: grid;
+   height: 100%;
+   margin-top: auto;
+  place-items: center;
+  background: transparent;
+  
+}
+
+
+.box {
+  background: rgba(255, 255, 255, 0.201);
+  backdrop-filter: blur(10px);
+  max-width: 480px;
+  height: 100%;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0%;
+  
+}
+
+.box .title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px 0 10px 0;
+  position: relative;
+  background-image: linear-gradient(120deg, #00c3ff, #40ff00);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.box  .title:before{
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 33px;
+  left: 0px;
+  bottom: 3px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+input {
+  background-color: transparent;
+  color: aliceblue;
+}
+
+select{
+  background: rgba(255, 255, 255, 0.15);
+}
+.box .input-box{
+  width: 100%;
+  height: 45px;
+  margin-top: 25px;
+  position: relative;
+  
+}
+.box .input-box input{
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  border: none;
+}
+.box  .input-box select{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 14px;
+  border: none;
+}
+.box .underline::before{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #d2d2d2;
+  left: 0;
+  bottom: 0;
+}
+.box  .underline::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.3s ease;
+}
+.box  .input-box input:focus ~ .underline::after,
+.box  .input-box input:valid ~ .underline::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.box  .button{
+  margin: 50px 0 20px 0;
+}
+.box .input-box input[type="submit"]{
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  font-size: 17px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.box .input-box input[type="submit"]:hover{
+  letter-spacing: 2px;
+  background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
+}
+.box .option{
+  font-size: 14px;
+  text-align: center;
+}
+#gifContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  margin-right: -15%;
+  animation-name: moveRight;
+  animation-duration: 1.5s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+#gifContainer.show {
+  opacity: 1;
+}
+#gif {
+  max-width: 90%;
+  height: auto;
+}
+
+
+.spinner {
+  margin: 100px auto;
+    margin-left:40%;
+  width: 150px;
+  height: 170px;
+  position: relative;
+}
+
+.cube1, .cube2 {
+  background-color:#1c15ff;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% { 
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% { 
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% { 
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% { 
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% { 
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}

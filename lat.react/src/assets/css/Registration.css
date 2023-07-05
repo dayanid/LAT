@@ -1,0 +1,111 @@
+
+.regbox {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 100%;
+  place-items: center;
+  padding: 25px ;
+  border-radius: 5px;
+  box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0%;
+}
+
+.error{
+  color: red;
+}
+
+.regbox .title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px 0 10px 0;
+  position: relative;
+  background-image: linear-gradient(120deg, #00c3ff, #40ff00);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.regbox  .title:before{
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 33px;
+  left: 0px;
+  bottom: 3px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+
+input {
+  background-color: transparent;
+  color: aliceblue;
+}
+select{
+  background: rgba(255, 255, 255, 0.15);
+}
+.regbox .input-box{
+  width: 100%;
+  height: 45px;
+  margin-top: 25px;
+  position: relative;
+  
+}
+.regbox .input-box input{
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  border: none;
+}
+.regbox  .input-box select{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
+.regbox .underline::before{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #d2d2d2;
+  left: 0;
+  bottom: 0;
+}
+.regbox  .underline::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.3s ease;
+}
+.regbox  .input-box input:focus ~ .underline::after,
+.regbox  .input-box input:valid ~ .underline::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.regbox  .button{
+  margin: 40px 0 20px 0;
+}
+.regbox .input-box input[type="submit"]{
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  font-size: 17px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.regbox .input-box input[type="submit"]:hover{
+  letter-spacing: 2px;
+  background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
+}
+.regbox .option{
+  font-size: 14px;
+  text-align: center;
+}
