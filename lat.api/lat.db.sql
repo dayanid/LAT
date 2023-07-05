@@ -83,43 +83,6 @@ CREATE TABLE `login` (
   `created_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `login`
---
-
-INSERT INTO `login` (`id`, `login_type`, `login_email`, `created_at`, `created_by`) VALUES
-(1, 'student', 'dayanidigv954@gmail.com', '2023-04-16 08:21:07', NULL),
-(2, 'student', 'dayanidigv954@gmail.com', '2023-04-16 09:30:44', NULL),
-(3, 'student', 'dayanidigv954@gmail.com', '2023-04-16 09:32:07', NULL),
-(4, 'student', 'dayanidigv954@gmail.com', '2023-04-16 09:47:22', NULL),
-(5, 'student', 'dayanidigv954@gmail.com', '2023-04-16 10:08:17', NULL),
-(6, 'student', 'dayanidigv954@gmail.com', '2023-04-16 10:24:21', NULL),
-(7, 'student', 'dayanidigv954@gmail.com', '2023-04-16 17:25:02', NULL),
-(8, 'student', 'dayanidigv954@gmail.com', '2023-04-16 21:59:31', NULL),
-(9, 'student', 'dayanidigv954@gmail.com', '2023-04-16 21:59:37', NULL),
-(10, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:42:55', NULL),
-(11, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:47:41', NULL),
-(12, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:47:55', NULL),
-(13, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:48:35', NULL),
-(14, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:48:57', NULL),
-(15, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:50:06', NULL),
-(16, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:50:22', NULL),
-(17, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:55:22', NULL),
-(18, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:56:07', NULL),
-(19, 'student', 'dayanidigv954@gmail.com', '2023-04-17 10:59:34', NULL),
-(20, 'student', 'harishreehp80@gmail.com', '2023-04-17 11:22:18', NULL),
-(21, 'student', 'dayanidigv954@gmail.com', '2023-04-17 11:40:13', NULL),
-(22, 'student', 'harishreehp80@gmail.com', '2023-04-17 11:44:45', NULL),
-(23, 'student', 'dayanidigv954@gmail.com', '2023-04-17 13:30:26', NULL),
-(24, 'student', 'darunika2004@gmail.com', '2023-04-17 13:45:44', NULL),
-(25, 'student', 'dayanidigv954@gmail.com', '2023-04-19 21:52:49', NULL),
-(26, 'student', 'dayanidigv954@gmail.com', '2023-04-19 11:30:36', NULL),
-(27, 'student', 'dayanidigv954@gmail.com', '2023-04-19 14:31:46', NULL),
-(28, 'student', 'dayanidigv954@gmail.com', '2023-04-19 14:48:42', NULL),
-(29, 'student', 'dayanidigv954@gmail.com', '2023-04-19 15:13:31', NULL),
-(30, 'student', 'harishreehp80@gmail.com', '2023-04-19 15:20:23', NULL);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `master`
@@ -232,18 +195,6 @@ CREATE TABLE `student` (
   `status` enum('A','D','E') NOT NULL DEFAULT 'A'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`student_id`, `student_name`, `student_mobile`, `student_registerno`, `student_passout`, `student_email`, `student_password`, `student_gender`, `student_graduation`, `student_department`, `student_profile`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
-(1, 'Dayanidi', '9677724053', '73152121015', '2025', 'dayanidigv954@gmail.com', '$2a$10$1bT208Tg0knpb6xYIRaD.uf8M8NpXV/vboil76RVdRTv5quD.joti', 'Male', 'UG', 'B.Tech. - Information Technology (IT)', 'D:\\Node Project\\Innak-crew.github.io\\lat.api\\app\\assist\\profile\\73152121015.jpg', '2023-04-16 08:20:25', NULL, '2023-04-18 14:39:03', NULL, 'A'),
-(2, 'S.Hari prasath ', '+918778637992', '73152121026', '2025', 'harishreehp80@gmail.com', '$2a$10$y6caswdB08PuX42Pqnt9uOZhBccAR1Vtq9c3s0Nw86M4KzQOyo2L.', 'Male', 'UG', 'B.Tech. - Information Technology (IT)', 'D:\\Node_Project\\Innak-crew.github.io\\lat.api\\app\\assist\\profile\\73152121026.jpg', '2023-04-17 11:21:41', NULL, '2023-04-19 15:18:46', NULL, 'A'),
-(3, 'B.Darunika', '8807801294', '73152121014', '2025', 'darunika2004@gmail.com', '$2a$10$pFu8iQfeNgKWRl1a.aBSLeiQhxC5Fky3f5Kc9BTWBBlHpNa87TRqS', 'Female', 'UG', 'B.Tech. - Information Technology (IT)', 'D:\\Node_Project\\Innak-crew.github.io\\lat.api\\app\\assist\\profile\\73152121014.jpg', '2023-04-17 13:44:56', NULL, NULL, NULL, 'A');
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `admin`
