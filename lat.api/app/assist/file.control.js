@@ -10,18 +10,37 @@ const saveImageFromDataUrl = async (dataUrl, filename) => {
     const buffer = Buffer.from(base64Data, 'base64');
 
     // Determine the file path to save the image
-    const imagePath = path.join(__dirname, 'profile', filename +".jpg"); // Saves the image in the same directory as the script with the custom filename
+    const profileDir = path.join(__dirname, 'profile');
+    const imagePath = path.join(profileDir, filename + '.jpg'); // Saves the image in the profile directory with the custom filename
 
-    // Write the buffer to a file
-    fs.writeFile(imagePath, buffer, (err) => {
+    // Check if the profile directory exists, and create it if not
+    fs.access(profileDir, fs.constants.F_OK, (err) => {
       if (err) {
-        console.error('Error saving image:', err);
-        reject(err);
+        fs.mkdir(profileDir, { recursive: true }, (err) => {
+          if (err) {
+            console.error('Error creating profile directory:', err);
+            reject(err);
+          } else {
+            saveImage();
+          }
+        });
       } else {
-        console.log('Image saved successfully:', imagePath);
-        resolve(imagePath);
+        saveImage();
       }
     });
+
+    // Write the buffer to a file
+    const saveImage = () => {
+      fs.writeFile(imagePath, buffer, (err) => {
+        if (err) {
+          console.error('Error saving image:', err);
+          reject(err);
+        } else {
+          console.log('Image saved successfully:', imagePath);
+          resolve(imagePath);
+        }
+      });
+    };
   });
 };
 
